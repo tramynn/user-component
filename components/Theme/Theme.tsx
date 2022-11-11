@@ -91,6 +91,7 @@ export const theme = createTheme({
       fontSize: '12px',
       fontWeight: '600',
       color: '#4A4A4A',
+      textTransform: 'capitalize',
       [`@media screen and (max-width: ${breakpointTheme.breakpoints.values.md}px)`]: {
         fontSize: '10px',
       },

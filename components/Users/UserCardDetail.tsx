@@ -3,6 +3,7 @@ import CardContent from '@mui/material/CardContent';
 import { Text } from '../Theme/Theme';
 import { formatPhoneNumber } from '../Format/formatPhoneNumber';
 import { formatDate } from '../Format/formatDate';
+import { UserCardDetailItem } from './UserCardDetailItem';
 
 interface UserCardDetailProps {
   street: string;
@@ -15,26 +16,14 @@ interface UserCardDetailProps {
 }
 
 export const UserCardDetail: React.FC<UserCardDetailProps> = ({ ...props }) => {
+  const userCardDetailItemProps = { street: props.street, city: props.city, state: props.state, zip: props.zip, phone: props.phone, createdAt: props.createdAt, lastLoggedIn: props.lastLoggedIn };
+
   return (
     <CardContent>
-      <Box sx={{ display: 'flex', flexDirection: 'column', ml: 7, mb: 2 }}>
-        <Text variant="DetailHeader">Address</Text>
-        <Text variant="DetailItem">
-          {props.street}, {props.city}, {props.state} {props.zip}
-        </Text>
-      </Box>
-      <Box sx={{ display: 'flex', flexDirection: 'column', ml: 7, mb: 2 }}>
-        <Text variant="DetailHeader">Phone</Text>
-        <Text variant="DetailItem">{formatPhoneNumber(props.phone)}</Text>
-      </Box>
-      <Box sx={{ display: 'flex', flexDirection: 'column', ml: 7, mb: 2 }}>
-        <Text variant="DetailHeader">Created At</Text>
-        <Text variant="DetailItem">{formatDate(props.createdAt)}</Text>
-      </Box>
-      <Box sx={{ display: 'flex', flexDirection: 'column', ml: 7 }}>
-        <Text variant="DetailHeader">Last Logged In</Text>
-        <Text variant="DetailItem">{formatDate(props.lastLoggedIn)}</Text>
-      </Box>
+      <UserCardDetailItem detailHeaderText="Address" ml={7} mb={2} {...userCardDetailItemProps} />
+      <UserCardDetailItem detailHeaderText="Phone" ml={7} mb={2} {...userCardDetailItemProps} />
+      <UserCardDetailItem detailHeaderText="Created At" ml={7} mb={2} {...userCardDetailItemProps} />
+      <UserCardDetailItem detailHeaderText="Last Logged In" ml={7} mb={0} {...userCardDetailItemProps} />
     </CardContent>
   );
 };

@@ -6,17 +6,21 @@ import GroupSVG from '../../images/icons/group.svg';
 import Image from 'next/image';
 import { Text } from '../Theme/Theme';
 
-export default function UserHeader() {
+interface UserHeaderProps {
+  header: string;
+}
+
+export const UserHeader: React.FC<UserHeaderProps> = ({ header }) => {
   return (
     <AppBar position="static" style={{ background: '#FFFFFF', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
       <Toolbar>
         <Stack direction="row" justifyContent="center" alignItems="center">
-          <Image src={GroupSVG} alt="group" />
+          {header.toLowerCase() === 'users' && <Image src={GroupSVG} alt="group" />}
           <Text variant="NavHeader" sx={{ ml: 1 }}>
-            Users
+            {header}
           </Text>
         </Stack>
       </Toolbar>
     </AppBar>
   );
-}
+};
