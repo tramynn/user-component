@@ -13,6 +13,12 @@ npm i
 npm run dev
 ```
 
+You can run the command below to run the unit tests for the `formatDate` and `formatPhoneNumber` functions.
+
+```
+npm test
+```
+
 # Directory Structure
 
 ## components
@@ -36,3 +42,7 @@ This is the parent folder for all of the images for the application.
 
 - ### icons
   - This contains all of the icons for the user roles.
+
+## tests
+
+This folder contains basic tests for the `formatDate` and `formatPhoneNumber` functions.
