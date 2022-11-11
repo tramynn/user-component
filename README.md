@@ -2,6 +2,8 @@
 
 This is a single-page react app created using [Next.js](https://nextjs.org/docs/basic-features/typescript) and [Material UI](https://mui.com/). It reads a list of users from the `users.json` file and creates appropriate user cards based on the user role.
 
+![screenshot](./screenshot1.png)
+
 # Installation
 
 Please run the commands below to install and run the app on `http://localhost:3000/`:
