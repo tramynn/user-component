@@ -1,8 +1,4 @@
-import { Box } from '@mui/material';
 import CardContent from '@mui/material/CardContent';
-import { Text } from '../Theme/Theme';
-import { formatPhoneNumber } from '../Format/formatPhoneNumber';
-import { formatDate } from '../Format/formatDate';
 import { UserCardDetailItem } from './UserCardDetailItem';
 
 interface UserCardDetailProps {

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box, Paper, ThemeProvider } from '@mui/material';
+import { Paper, ThemeProvider } from '@mui/material';
 import { UserCard } from './UserCard';
 import { theme } from '../Theme/Theme';
 import users from '../../users.json';
