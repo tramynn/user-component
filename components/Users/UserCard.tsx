@@ -11,8 +11,7 @@ import ViewerSVG from '../../images/icons/viewerRole.svg';
 import Image from 'next/image';
 import { Box } from '@mui/material';
 import { Text } from '../Theme/Theme';
-import { formatPhoneNumber } from '../Format/formatPhoneNumber';
-import { formatDate } from '../Format/formatDate';
+import { UserCardDetail } from './UserCardDetail';
 
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
@@ -50,6 +49,8 @@ export const UserCard: React.FC<UserCardProps> = ({ ...props }) => {
     setExpanded(!expanded);
   };
 
+  const userCardDetailProps = { street: props.street, city: props.city, state: props.state, zip: props.zip, phone: props.phone, createdAt: props.createdAt, lastLoggedIn: props.lastLoggedIn };
+
   return (
     <Card elevation={3} sx={{ m: 2 }}>
       <CardContent sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -68,26 +69,7 @@ export const UserCard: React.FC<UserCardProps> = ({ ...props }) => {
         </ExpandMore>
       </CardContent>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent sx={{}}>
-          <Box sx={{ display: 'flex', flexDirection: 'column', ml: 7, mb: 2 }}>
-            <Text variant="DetailHeader">Address</Text>
-            <Text variant="DetailItem">
-              {props.street}, {props.city}, {props.state} {props.zip}
-            </Text>
-          </Box>
-          <Box sx={{ display: 'flex', flexDirection: 'column', ml: 7, mb: 2 }}>
-            <Text variant="DetailHeader">Phone</Text>
-            <Text variant="DetailItem">{formatPhoneNumber(props.phone)}</Text>
-          </Box>
-          <Box sx={{ display: 'flex', flexDirection: 'column', ml: 7, mb: 2 }}>
-            <Text variant="DetailHeader">Created At</Text>
-            <Text variant="DetailItem">{formatDate(props.createdAt)}</Text>
-          </Box>
-          <Box sx={{ display: 'flex', flexDirection: 'column', ml: 7 }}>
-            <Text variant="DetailHeader">Last Logged In</Text>
-            <Text variant="DetailItem">{formatDate(props.lastLoggedIn)}</Text>
-          </Box>
-        </CardContent>
+        <UserCardDetail {...userCardDetailProps} />
       </Collapse>
     </Card>
   );

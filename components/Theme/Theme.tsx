@@ -46,46 +46,64 @@ export const theme = createTheme({
   typography: {
     fontFamily: ['Open Sans'].join(','),
     NavHeader: {
-      fontSize: '18px',
+      fontSize: '20px',
       color: '#4A4A4A',
       textTransform: 'uppercase',
+      [`@media screen and (max-width: ${breakpointTheme.breakpoints.values.md}px)`]: {
+        fontSize: '18px',
+      },
       [`@media screen and (max-width: ${breakpointTheme.breakpoints.values.sm}px)`]: {
         fontSize: '16px',
       },
     },
     UserName: {
-      fontSize: '12px',
+      fontSize: '14px',
       fontWeight: '600',
       color: '#4A4A4A',
+      [`@media screen and (max-width: ${breakpointTheme.breakpoints.values.md}px)`]: {
+        fontSize: '12px',
+      },
       [`@media screen and (max-width: ${breakpointTheme.breakpoints.values.sm}px)`]: {
         fontSize: '10px',
       },
     },
     UserRole: {
-      fontSize: '10px',
+      fontSize: '12px',
       color: '#4A4A4A',
+      [`@media screen and (max-width: ${breakpointTheme.breakpoints.values.md}px)`]: {
+        fontSize: '10px',
+      },
       [`@media screen and (max-width: ${breakpointTheme.breakpoints.values.sm}px)`]: {
         fontSize: '8px',
       },
     },
     Email: {
-      fontSize: '10px',
+      fontSize: '12px',
       color: '#7E7E7E',
+      [`@media screen and (max-width: ${breakpointTheme.breakpoints.values.md}px)`]: {
+        fontSize: '10px',
+      },
       [`@media screen and (max-width: ${breakpointTheme.breakpoints.values.sm}px)`]: {
         fontSize: '8px',
       },
     },
     DetailHeader: {
-      fontSize: '10px',
+      fontSize: '12px',
       fontWeight: '600',
       color: '#4A4A4A',
+      [`@media screen and (max-width: ${breakpointTheme.breakpoints.values.md}px)`]: {
+        fontSize: '10px',
+      },
       [`@media screen and (max-width: ${breakpointTheme.breakpoints.values.sm}px)`]: {
         fontSize: '8px',
       },
     },
     DetailItem: {
-      fontSize: '10px',
+      fontSize: '12px',
       color: '#4A4A4A',
+      [`@media screen and (max-width: ${breakpointTheme.breakpoints.values.md}px)`]: {
+        fontSize: '10px',
+      },
       [`@media screen and (max-width: ${breakpointTheme.breakpoints.values.sm}px)`]: {
         fontSize: '8px',
       },
