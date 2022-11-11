@@ -12,6 +12,7 @@ import Image from 'next/image';
 import { Box } from '@mui/material';
 import { Text } from '../Theme/Theme';
 import { UserCardDetail } from './UserCardDetail';
+import { useState } from 'react';
 
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
@@ -43,7 +44,7 @@ interface UserCardProps {
 }
 
 export const UserCard: React.FC<UserCardProps> = ({ ...props }) => {
-  const [expanded, setExpanded] = React.useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -52,7 +53,7 @@ export const UserCard: React.FC<UserCardProps> = ({ ...props }) => {
   const userCardDetailProps = { street: props.street, city: props.city, state: props.state, zip: props.zip, phone: props.phone, createdAt: props.createdAt, lastLoggedIn: props.lastLoggedIn };
 
   return (
-    <Card elevation={3} sx={{ m: 2 }}>
+    <Card elevation={3} sx={{ ml: 2, mr: 2, mt: 2, '&:last-child': { mb: 2 } }}>
       <CardContent sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
         {props.role === 'Administrator' && <Image src={AdministratorSVG} alt="user" height={50} />}
         {props.role === 'User' && <Image src={UserSVG} alt="user" height={50} />}
