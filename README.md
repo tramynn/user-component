@@ -41,7 +41,9 @@ This is the parent folder that contains all of the reusable components.
 This is the parent folder for all of the images for the application.
 
 - ### icons
-  - This contains all of the icons for the user roles.
+  - This contains the group svg and the roles folder.
+  - roles
+    - This folder is for all of the user role icons.
 
 ## tests
 
