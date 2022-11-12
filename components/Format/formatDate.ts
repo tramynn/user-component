@@ -14,5 +14,9 @@ export function formatDate(dateISOString: string) {
 
   var date = month + '/' + day + '/' + year + ' ' + time;
 
+  if (date.includes('Invalid Date')) {
+    throw new Error('Invalid Date, please enter a valid date');
+  }
+
   return date;
 }

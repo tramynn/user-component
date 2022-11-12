@@ -18,7 +18,7 @@ export default function UserContainer() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Paper elevation={3} sx={{ height: '100%', width: { xs: '300px', sm: '400px' }, background: '#dbe4f1', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+      <Paper elevation={3} sx={{ height: '100%', width: { xs: '300px', sm: '400px' }, background: '#f1f5f8', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
         <UserHeader header="Users" />
         {isLoading ? <CircularProgress sx={{ margin: '20px auto' }} /> : Array.from(users).map((user, index) => <UserCard key={index} {...user} />)}
       </Paper>
