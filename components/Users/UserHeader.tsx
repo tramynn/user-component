@@ -12,7 +12,7 @@ interface UserHeaderProps {
 
 export const UserHeader: React.FC<UserHeaderProps> = ({ header }) => {
   return (
-    <AppBar position="static" style={{ background: '#FFFFFF', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+    <AppBar position="static" style={{ background: '#FFFFFF', display: 'flex', justifyContent: 'center', alignItems: 'center', borderRadius: '0px' }}>
       <Toolbar>
         <Stack direction="row" justifyContent="center" alignItems="center">
           {header.toLowerCase() === 'users' && <Image src={GroupSVG} alt="group" />}

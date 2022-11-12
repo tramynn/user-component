@@ -53,7 +53,7 @@ export const UserCard: React.FC<UserCardProps> = ({ ...props }) => {
   const userCardDetailProps = { street: props.street, city: props.city, state: props.state, zip: props.zip, phone: props.phone, createdAt: props.createdAt, lastLoggedIn: props.lastLoggedIn };
 
   return (
-    <Card elevation={3} sx={{ ml: 2, mr: 2, mt: 2, '&:last-child': { mb: 2 } }}>
+    <Card elevation={3} sx={{ ml: 2, mr: 2, mt: 2, '&:last-child': { mb: 2 }, borderRadius: '3px' }}>
       <CardContent sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
         {props.role === 'Administrator' && <Image src={AdministratorSVG} alt="user" height={50} />}
         {props.role === 'User' && <Image src={UserSVG} alt="user" height={50} />}
