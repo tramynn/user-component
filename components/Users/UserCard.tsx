@@ -9,8 +9,6 @@ import AdministratorSVG from '../../images/icons/roles/administrator.svg';
 import UserSVG from '../../images/icons/roles/user.svg';
 import ViewerSVG from '../../images/icons/roles/viewer.svg';
 import Image from 'next/image';
-import { Box } from '@mui/material';
-import { Text } from '../Theme/Theme';
 import { UserCardDetail } from './UserCardDetail';
 import { useState } from 'react';
 import { UserCardBody } from './UserCardBody';
