@@ -1,4 +1,4 @@
-import { Box } from '@mui/material';
+import { Stack } from '@mui/material';
 import { Text } from '../Theme/Theme';
 import { formatPhoneNumber } from '../Format/formatPhoneNumber';
 import { formatDate } from '../Format/formatDate';
@@ -18,7 +18,7 @@ interface UserCardDetailProps {
 
 export const UserCardDetailItem: React.FC<UserCardDetailProps> = ({ ...props }) => {
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', ml: props.ml, mb: props.mb }}>
+    <Stack direction="column" sx={{ ml: props.ml, mb: props.mb }}>
       <Text variant="DetailHeader">{props.detailHeaderText}</Text>
       {props.detailHeaderText.toLowerCase() === 'address' && (
         <Text variant="DetailItem">
@@ -28,6 +28,6 @@ export const UserCardDetailItem: React.FC<UserCardDetailProps> = ({ ...props }) 
       {props.detailHeaderText.toLowerCase() === 'phone' && <Text variant="DetailItem">{formatPhoneNumber(props.phone)}</Text>}
       {props.detailHeaderText.toLowerCase() === 'created at' && <Text variant="DetailItem">{formatDate(props.createdAt)}</Text>}
       {props.detailHeaderText.toLowerCase() === 'last logged in' && <Text variant="DetailItem">{formatDate(props.lastLoggedIn)}</Text>}
-    </Box>
+    </Stack>
   );
 };
