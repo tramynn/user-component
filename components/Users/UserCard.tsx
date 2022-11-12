@@ -13,6 +13,7 @@ import { Box } from '@mui/material';
 import { Text } from '../Theme/Theme';
 import { UserCardDetail } from './UserCardDetail';
 import { useState } from 'react';
+import { UserCardBody } from './UserCardBody';
 
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
@@ -50,6 +51,7 @@ export const UserCard: React.FC<UserCardProps> = ({ ...props }) => {
     setExpanded(!expanded);
   };
 
+  const userCardBodyProps = { firstName: props.firstName, lastName: props.lastName, role: props.role, email: props.email };
   const userCardDetailProps = { street: props.street, city: props.city, state: props.state, zip: props.zip, phone: props.phone, createdAt: props.createdAt, lastLoggedIn: props.lastLoggedIn };
 
   return (
@@ -58,13 +60,7 @@ export const UserCard: React.FC<UserCardProps> = ({ ...props }) => {
         {props.role === 'Administrator' && <Image src={AdministratorSVG} alt="user" height={50} />}
         {props.role === 'User' && <Image src={UserSVG} alt="user" height={50} />}
         {props.role === 'Viewer' && <Image src={ViewerSVG} alt="user" height={50} />}
-        <Box sx={{ ml: 1, mr: 1, display: 'flex', flexDirection: 'column' }}>
-          <Text variant="UserName">
-            {props.firstName} {props.lastName}
-          </Text>
-          <Text variant="UserRole">{props.role}</Text>
-          <Text variant="Email">{props.email}</Text>
-        </Box>
+        <UserCardBody {...userCardBodyProps} />
         <ExpandMore expand={expanded} onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more">
           <ExpandMoreIcon />
         </ExpandMore>
