@@ -1,6 +1,7 @@
 import { createTheme, ThemeOptions, Typography, TypographyProps } from '@mui/material';
 import { TypographyOptions } from '@mui/material/styles/createTypography';
 import { BLACK, WHITE, DARK_GREY, MEDIUM_GREY } from './Colors';
+import { TWENTY_PX, EIGHTEEN_PX, SIXTEEN_PX, FOURTEEN_PX, TWELVE_PX, TEN_PX, EIGHT_PX, UPPERCASE, CAPITALIZE, SEMI_BOLD } from './FontProperties';
 
 declare module '@mui/material/Typography' {
   interface TypographyPropsVariantOverrides {
@@ -47,67 +48,67 @@ export const theme = createTheme({
   typography: {
     fontFamily: ['Open Sans'].join(','),
     NavHeader: {
-      fontSize: '20px',
+      fontSize: TWENTY_PX,
       color: DARK_GREY,
-      textTransform: 'uppercase',
+      textTransform: UPPERCASE,
       [`@media screen and (max-width: ${breakpointTheme.breakpoints.values.md}px)`]: {
-        fontSize: '18px',
+        fontSize: EIGHTEEN_PX,
       },
       [`@media screen and (max-width: ${breakpointTheme.breakpoints.values.sm}px)`]: {
-        fontSize: '16px',
+        fontSize: SIXTEEN_PX,
       },
     },
     UserName: {
-      fontSize: '14px',
-      fontWeight: '600',
+      fontSize: FOURTEEN_PX,
+      fontWeight: SEMI_BOLD,
       color: DARK_GREY,
       [`@media screen and (max-width: ${breakpointTheme.breakpoints.values.md}px)`]: {
-        fontSize: '12px',
+        fontSize: TWELVE_PX,
       },
       [`@media screen and (max-width: ${breakpointTheme.breakpoints.values.sm}px)`]: {
-        fontSize: '10px',
+        fontSize: TEN_PX,
       },
     },
     UserRole: {
-      fontSize: '12px',
+      fontSize: TWELVE_PX,
       color: DARK_GREY,
       [`@media screen and (max-width: ${breakpointTheme.breakpoints.values.md}px)`]: {
-        fontSize: '10px',
+        fontSize: TEN_PX,
       },
       [`@media screen and (max-width: ${breakpointTheme.breakpoints.values.sm}px)`]: {
-        fontSize: '8px',
+        fontSize: EIGHT_PX,
       },
     },
     Email: {
-      fontSize: '12px',
+      fontSize: TWELVE_PX,
       color: MEDIUM_GREY,
       [`@media screen and (max-width: ${breakpointTheme.breakpoints.values.md}px)`]: {
-        fontSize: '10px',
+        fontSize: TEN_PX,
       },
       [`@media screen and (max-width: ${breakpointTheme.breakpoints.values.sm}px)`]: {
-        fontSize: '8px',
+        fontSize: EIGHT_PX,
       },
     },
     DetailHeader: {
-      fontSize: '12px',
-      fontWeight: '600',
+      fontSize: TWELVE_PX,
+      fontWeight: SEMI_BOLD,
       color: DARK_GREY,
-      textTransform: 'capitalize',
+      textTransform: CAPITALIZE,
       [`@media screen and (max-width: ${breakpointTheme.breakpoints.values.md}px)`]: {
-        fontSize: '10px',
+        fontSize: TEN_PX,
       },
       [`@media screen and (max-width: ${breakpointTheme.breakpoints.values.sm}px)`]: {
-        fontSize: '8px',
+        fontSize: EIGHT_PX,
       },
     },
     DetailItem: {
-      fontSize: '12px',
+      fontSize: TWELVE_PX,
       color: DARK_GREY,
       [`@media screen and (max-width: ${breakpointTheme.breakpoints.values.md}px)`]: {
-        fontSize: '10px',
+        fontSize: TEN_PX,
       },
       [`@media screen and (max-width: ${breakpointTheme.breakpoints.values.sm}px)`]: {
-        fontSize: '8px',
+        fontSize: EIGHT_PX,
       },
     },
   } as ExtendedTypographyOptions,
