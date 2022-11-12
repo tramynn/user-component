@@ -1,5 +1,6 @@
 import { createTheme, ThemeOptions, Typography, TypographyProps } from '@mui/material';
 import { TypographyOptions } from '@mui/material/styles/createTypography';
+import { BLACK, WHITE, DARK_GREY, MEDIUM_GREY } from './Colors';
 
 declare module '@mui/material/Typography' {
   interface TypographyPropsVariantOverrides {
@@ -37,17 +38,17 @@ export const theme = createTheme({
   ...breakpointTheme,
   palette: {
     primary: {
-      main: '#FFFFFF',
+      main: WHITE,
     },
     secondary: {
-      main: '#FFFFFF',
+      main: BLACK,
     },
   },
   typography: {
     fontFamily: ['Open Sans'].join(','),
     NavHeader: {
       fontSize: '20px',
-      color: '#4A4A4A',
+      color: DARK_GREY,
       textTransform: 'uppercase',
       [`@media screen and (max-width: ${breakpointTheme.breakpoints.values.md}px)`]: {
         fontSize: '18px',
@@ -59,7 +60,7 @@ export const theme = createTheme({
     UserName: {
       fontSize: '14px',
       fontWeight: '600',
-      color: '#4A4A4A',
+      color: DARK_GREY,
       [`@media screen and (max-width: ${breakpointTheme.breakpoints.values.md}px)`]: {
         fontSize: '12px',
       },
@@ -69,7 +70,7 @@ export const theme = createTheme({
     },
     UserRole: {
       fontSize: '12px',
-      color: '#4A4A4A',
+      color: DARK_GREY,
       [`@media screen and (max-width: ${breakpointTheme.breakpoints.values.md}px)`]: {
         fontSize: '10px',
       },
@@ -79,7 +80,7 @@ export const theme = createTheme({
     },
     Email: {
       fontSize: '12px',
-      color: '#7E7E7E',
+      color: MEDIUM_GREY,
       [`@media screen and (max-width: ${breakpointTheme.breakpoints.values.md}px)`]: {
         fontSize: '10px',
       },
@@ -90,7 +91,7 @@ export const theme = createTheme({
     DetailHeader: {
       fontSize: '12px',
       fontWeight: '600',
-      color: '#4A4A4A',
+      color: DARK_GREY,
       textTransform: 'capitalize',
       [`@media screen and (max-width: ${breakpointTheme.breakpoints.values.md}px)`]: {
         fontSize: '10px',
@@ -101,7 +102,7 @@ export const theme = createTheme({
     },
     DetailItem: {
       fontSize: '12px',
-      color: '#4A4A4A',
+      color: DARK_GREY,
       [`@media screen and (max-width: ${breakpointTheme.breakpoints.values.md}px)`]: {
         fontSize: '10px',
       },
